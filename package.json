@@ -1,11 +1,11 @@
 {
   "name": "twitter",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Best Twitter Knock-off EVER!",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "PORT=8000 ./node_modules/.bin/nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,10 @@
   "dependencies": {
     "pre-commit": "^1.1.1"
   },
-  "pre-commit": [
-    
-  ]
+  "pre-commit": [],
+  "devDependencies": {
+    "shot": "^1.7.0",
+    "tape": "^4.2.1",
+    "nodemon": "^1.7.1"
+  }
 }
