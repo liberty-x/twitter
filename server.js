@@ -6,37 +6,33 @@ console.log("Server running at http://localhost:" + port);
 // var client = redis.createClient();
 
 var index = fs.readFileSync(__dirname + '/public/index.html');
-var myApp = makeHandler();
 
-function makeHandler () {
-  var middlewareStore = [];
-
-  function handler (req,res) {
-     var i = 0;
-     console.log(req.method)
-     middlewareStore[i](req,res,next);
-     function next(){
-      i++;
-      middlewareStore[i](req,res,next);
-     }
-  }
-
-  handler.add = function (fn) {
-    middlewareStore.push(fn);
-  };
-
-  return handler;
+function handler(req,res){
+  console.log(req.method);
+  // function loadingPage(req,res){
+    if (req.url === '/') {
+      res.writeHead(200, {"Content-Type": "text/html"});
+      res.end(index);
+    }
+    else if (req.url.indexOf('.') > -1){
+      var ext = req.url.split('.');
+      res.writeHead(200,{"Content-Type": "text/" + ext[1]});
+      res.end(fs.readFileSync(__dirname + req.url));
+    }
 }
+  // }
+  // function sendToDB(req, callback){
+  //   if (req.method === 'POST') {
+  //     var body = '';
+  //     req.on('data', function (dataChunk) {
+  //         body += dataChunk;
+  //     });
+  //     req.on('end', function () {
+  //         });
+  //     });
 
-myApp.add(function hello(req, res, next) {
-  res.writeHead(200,{"Content-Type": "text/html"});
-  res.write('<h1>Hello!</h1>');
-  next();
-});
 
-myApp.add(function bye(req, res, next) {
-  res.write('<h1>Bye!!!</h1>');
-  res.end();
-});
 
-var server = http.createServer(myApp).listen(port);
+var server = http.createServer(handler).listen(port);
+
+module.exports = handler;
