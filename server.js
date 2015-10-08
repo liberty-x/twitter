@@ -17,8 +17,8 @@ function handler(req,res){
     res.end(index);
   }
   else if (url.indexOf('.') > -1){
-    var ext = url.split('.');
-    res.writeHead(200,{"Content-Type": "text/" + ext[1]});
+    var ext = url.split('.')[1];
+    res.writeHead(200,{"Content-Type": "text/" + ext});
     res.end(fs.readFileSync(__dirname + url));
   }
   else if (req.method === 'POST'){
@@ -27,29 +27,23 @@ function handler(req,res){
     var username = dataInputs[2];
     var tweet = dataInputs[3];
 
-    writingToDB(date,username,tweet);
+    writingToDB(date,username,tweet, getData);
+
     res.writeHead(200, {"Content-Type": "text/html"});
     res.end("hi");
   }
-    // else if (req.method === 'GET'){
-    //   console.log("I am getting");
-    //
-    //
-    //   res.writeHead(200, {"Content-Type": "text/html"});
-    //
-    // }
 
 }
 
-function writingToDB(date, username, tweet, callback){
+function writingToDB(date, username, tweet,callback){
   client.HMSET(date, "username", username, "tweet", tweet);
-  getData(date);
+  callback(date);
 }
 
 function getData(date){
   console.log(date);
   var response = client.HGETALL(date)
-  // console.log(response)
+  console.log(response)
 }
 
 

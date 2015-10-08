@@ -1,6 +1,7 @@
 # Twitter (or LX Twit)
 
-[Badges to go here!]
+
+[![Codecrystal](https://img.shields.io/badge/code-crystal-5CB3FF.svg)](http://codecrystal.herokuapp.com/crystalise/liberty-x/twitter/master) [![Build Status](https://travis-ci.org/liberty-x/twitter.svg?branch=master)](https://travis-ci.org/liberty-x/twitter) [![Code Climate](https://codeclimate.com/github/liberty-x/twitter/badges/gpa.svg)](https://codeclimate.com/github/liberty-x/twitter)[![Test Coverage](https://codeclimate.com/github/liberty-x/twitter/badges/coverage.svg)](https://codeclimate.com/github/liberty-x/twitter/coverage)![devDependencies](https://david-dm.org/liberty-x/twitter.svg) [![devDependency Status](https://david-dm.org/liberty-x/twitter/dev-status.svg)](https://david-dm.org/liberty-x/twitter#info=devDependencies)[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 Please find our site [here](link to go here). (needs link once on Heroku).
 
@@ -38,4 +39,4 @@ Link [here]() to our frontend tests, conducted with QUnit.
 
 For backend testing, please download our repo and run our backend.js file, having used the command ``npm install`` to download our dependencies shown above.
 
-### Learning Outcomes 
+### Learning Outcomes
