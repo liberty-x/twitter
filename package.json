@@ -8,7 +8,7 @@
     "test": "./node_modules/.bin/tape ./test/backend.js",
     "start": "node index.js",
     "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore .",
-    "coverage": "istanbul cover ./node_modules/.bin/tape ./test/*"
+    "coverage": "istanbul cover ./node_modules/.bin/tape ./test/backend.js"
   },
   "repository": {
     "type": "git",
