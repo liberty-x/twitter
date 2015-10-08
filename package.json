@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/liberty-x/twitter#readme",
   "dependencies": {
+    "codecov.io": "^0.1.6",
     "env2": "^2.0.2",
     "pre-commit": "^1.1.1",
     "redis": "^2.1.0"
