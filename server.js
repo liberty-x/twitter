@@ -30,23 +30,24 @@ var serve = (function() {
       var username = dataInputs[2];
       var tweet = dataInputs[3];
 
-      writingToDB(date, username, tweet, getData);
-
-      res.writeHead(200, {"Content-Type": "text/html"});
-      res.end("hi");
+      writingToDB(date, username, tweet,function(err, reply){
+        console.log("ERROR", err, "REPLY", reply);
+        res.writeHead(200, {"Content-Type": "text/html"});
+        res.end(reply);
+      });
     }
   }
 
   function writingToDB(date, username, tweet, callback) {
-    client.HMSET(date, "username", username, "tweet", tweet);
-    callback(date);
+    client.HMSET(date, ["username", username, "tweet", tweet], callback);
   }
 
-  function getData(date) {
-    console.log(date);
-    var response = client.HGETALL(date)
-    console.log(response)
-  }
+  //
+  // function getData(date) {
+  // //  return date;
+  //   var response = client.HGETALL(date)
+  // //  console.log(response)
+  // }
 
   var create = function (){
     var server = http.createServer(handler);
@@ -56,7 +57,9 @@ var serve = (function() {
   return {
     handler: handler,
     create: create,
-    clientQuit: client.quit()
+    client: client,
+    writingToDB: writingToDB
+    //getData: getData
   }
 }());
 

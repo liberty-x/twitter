@@ -9,8 +9,13 @@ document.getElementById('form').addEventListener('submit', function(e){
   var out = new XMLHttpRequest();
   out.onreadystatechange = function(){
     if (out.readyState === 4 && out.status === 200){
-      document.getElementById('display').innerHTML = out.responseText;
-    }
+      console.log(out.responseText)
+      if (out.responseText === 'OK')
+       document.getElementById('display').innerHTML = tweet;
+      }
+      else {
+        alert("Your tweet is obviously wrong")
+      }
   };
   out.open('POST', '/' + date + '/' + username + '/' + tweet);
   out.send();
