@@ -3,6 +3,8 @@
 
 [![Codecrystal](https://img.shields.io/badge/code-crystal-5CB3FF.svg)](http://codecrystal.herokuapp.com/crystalise/liberty-x/twitter/master) [![Build Status](https://travis-ci.org/liberty-x/twitter.svg?branch=master)](https://travis-ci.org/liberty-x/twitter)  [![Code Climate](https://codeclimate.com/github/liberty-x/twitter/badges/gpa.svg)](https://codeclimate.com/github/liberty-x/twitter) [![Test Coverage](https://codeclimate.com/github/liberty-x/twitter/badges/coverage.svg)](https://codeclimate.com/github/liberty-x/twitter/coverage) ![devDependencies](https://david-dm.org/liberty-x/twitter.svg) [![devDependency Status](https://david-dm.org/liberty-x/twitter/dev-status.svg)](https://david-dm.org/liberty-x/twitter#info=devDependencies) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
+[![forthebadge](http://forthebadge.com/images/badges/uses-html.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/built-with-swag.svg)](http://forthebadge.com)
+
 Please find our site [here](link to go here). (needs link once on Heroku).
 
 ## Who?

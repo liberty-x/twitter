@@ -5,7 +5,6 @@ var port = process.env.PORT || 8000;
 var server = http.createServer(handler).listen(port);
 var redis  = require("redis");
 var client = redis.createClient();
-
 var index = fs.readFileSync(__dirname + '/public/index.html');
 
 function handler(req,res){
@@ -45,6 +44,6 @@ function getData(date){
   var response = client.HGETALL(date)
   console.log(response)
 }
-
+}
 
 module.exports = handler;

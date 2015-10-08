@@ -4,4 +4,4 @@ dump.rdb
 npm-debug.log
 .jshintrc
 coverage
-.travis.yml
+config.env
