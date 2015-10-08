@@ -17,8 +17,8 @@ function handler(req,res){
       res.end(index);
     }
     else if (req.url.indexOf('.') > -1){
-      var ext = req.url.split('.');
-      res.writeHead(200,{"Content-Type": "text/" + ext[1]});
+      var ext = req.url.split('.')[1];
+      res.writeHead(200,{"Content-Type": "text/" + ext});
       res.end(fs.readFileSync(__dirname + req.url));
     }
     else if (req.url.indexOf('%') > -1) {
