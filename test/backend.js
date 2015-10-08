@@ -1,5 +1,5 @@
 var test = require('tape');
-var handler = require('../server.js');
+var server = require('../server.js');
 var shot = require('shot');
 
 test("check server is running", function(t){
@@ -9,7 +9,7 @@ var request = {
   url: '/'
 };
 
-  shot.inject(handler, request, function(res){
+  shot.inject(server.handler, request, function(res){
     var result = res.statusCode;
     var expected = 200;
     t.equal(expected, result, "server is up and running");
@@ -24,9 +24,10 @@ test("check handler can process files ", function(t){
     url: '/public/style.css'
   };
 
-  shot.inject(handler, request, function(res){
+  shot.inject(server.handler, request, function(res){
     var result = res.statusCode;
     var expected = 200;
+    server.clientQuit;
     t.equal(expected, result, "handler ready to process files!");
     t.end();
   });
