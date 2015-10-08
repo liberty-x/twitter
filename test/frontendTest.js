@@ -23,8 +23,8 @@ test("tweet value logged", function(assert){
 });
 
 test("are the tweets being displayed?", function(assert){
-  var initial = target.getElementsByTagName("li").length;
-  var result = initial > 0;
+  var initial = target.getElementsByTagName("div").length;
+  var result = initial > 1;
   var expected = true;
   assert.equal(result,expected, "yes they are!");
 });
