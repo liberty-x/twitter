@@ -4,7 +4,7 @@
   "description": "The Best Twitter Knock-off EVER!",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/tape ./test/backend.js",
     "start": "PORT=8000 ./node_modules/.bin/nodemon server.js"
   },
   "repository": {
