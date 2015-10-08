@@ -27,22 +27,32 @@ test("check handler can process files ", function(t){
   shot.inject(server.handler, request, function(res){
     var result = res.statusCode;
     var expected = 200;
-    server.clientQuit;
     t.equal(expected, result, "handler ready to process files!");
     t.end();
   });
 });
 
-//third test
+test("Has the date been logged on database", function(t) {
+  var request = {
+    method:'POST',
+    url: '/' + "1234" + '/' + "Ruth" + '/' + "Hello"
+  };
 
-// test("check handler returns correct files ", function(t){
-//   var result =
-// })
+  shot.inject(server.handler, request, function(res) {
+    var result = res.payload;
+    t.equal(result, 'OK', "success!")
+    t.end();
+    server.client.quit();
+  })
+})
 
 
-// if (req.url.indexOf('%') > -1) {
-//   test("Does server receive post request when submit button is pressed", function(t){
-//     t.equal(req.method, "POST", "POST request received");
+
+// test("Does server receive post request", function(t){
+//     shot.inject(server.handler, request, function(res){
+//     var result = req.method
+//     var expected = "POST"
+//     t.equal(expected, result, "POST request recieved");
 //     t.end();
-//   })
-// }
+//   });
+// });
