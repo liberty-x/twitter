@@ -1,9 +1,47 @@
-h5{
-  color: blue;
-  background-color: yellow;
+body{
+  background-color: #24C3BE;;
+}
+
+
+
+
+img {
+  padding: 5%;
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+h5 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 4em;
+  text-align: center;
+  font-style: italic;
+  font-weight: 100;
+  margin-top: 0;
+  margin-bottom: 5%;
+}
+
+.content > * {
   text-align: center;
 }
 
-body{
-  background-color: teal;
+input {
+  width: 70%;
+  padding: 1em;
+  height: 7em;
+  opacity: 0.3;
+}
+
+
+input:last-child {
+  opacity: 1;
+  width: 60%;
+  font-size: 2em;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #008681;
+  text-decoration: none;
+  margin: 5%;
+  border: 0;
 }
