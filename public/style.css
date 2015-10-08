@@ -1,11 +1,7 @@
-
-body{
-  background-color: #24C3BE;;
+body {
+  background-color: #24C3BE;
+  ;
 }
-
-
-
-
 img {
   padding: 5%;
   width: 60%;
@@ -13,7 +9,6 @@ img {
   margin-left: auto;
   margin-right: auto
 }
-
 p {
   text-align: center;
 }
@@ -26,19 +21,15 @@ h5 {
   margin-top: 0;
   margin-bottom: 5%;
 }
-
 .content > * {
   text-align: center;
 }
-
 input {
   width: 70%;
   height: 7em;
   opacity: 0.3;
   margin: 0.6%;
 }
-
-
 input:last-child {
   opacity: 1;
   font-size: 3em;
@@ -47,9 +38,9 @@ input:last-child {
   text-decoration: none;
   font-weight: 700;
   border: 0;
-   border-radius: 0;
-   padding: 0px;
-   box-sizing: initial;
+  border-radius: 0;
+  padding: 0px;
+  box-sizing: initial;
   height: 2em;
   margin: 5%;
   /*appearance: none;
@@ -60,15 +51,52 @@ input:last-child {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;*/
 }
-
-@media all and (min-width: 600px) {
+@media (min-width: 600px) {
   img {
     width: 15%;
     padding: 2%;
   }
-
   h2 {
     font-size: 2.2em;
-    margin-bottom: 1.5%;
+    margin-bottom: 1%;
+  }
+  input:last-child {
+    height: 1.5em;
+    width: 40%;
+  }
+  /* for grid styling */
+  /*  SECTIONS  */
+  .section {
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+  }
+  /*  COLUMN SETUP  */
+  .col {
+    display: block;
+    float: left;
+    margin: 1% 0 1% 1.6%;
+  }
+  .col:first-child {
+    margin-left: 0;
+  }
+  /*  GROUPING  */
+  .group:before, .group:after {
+    content: "";
+    display: table;
+  }
+  .group:after {
+    clear: both;
+  }
+  .group {
+    zoom: 1;
+    /* For IE 6/7 */
+  }
+  /*  GRID OF TWO  */
+  .span_2_of_2 {
+    width: 100%;
+  }
+  .span_1_of_2 {
+    width: 49.2%;
   }
 }
