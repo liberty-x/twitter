@@ -11,8 +11,8 @@ var serve = (function() {
 
   function handler(req, res) {
     var url = req.url;
-    // console.log(req.method);
-    // console.log(url);
+    console.log(req.method);
+    console.log(url);
     if (url === '/') {
       res.writeHead(200, {
         "Content-Type": "text/html"
