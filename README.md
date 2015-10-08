@@ -31,9 +31,16 @@ Users input their username and tweet in a form box that will then appear below. 
 ### Depedencies
 
 * Redis (database)
+* Env2 (enviroment variables)
+* Pre-commit
+
+#### Dev Dependencies
+
 * QUnit (frontend testing)
 * Tape (backend testing)
 * Shot (backend testing)
+* Istanbul
+* Codeclimate 
 
 ### Testing
 

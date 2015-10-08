@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/liberty-x/twitter#readme",
   "dependencies": {
+    "env2": "^2.0.2",
     "pre-commit": "^1.1.1",
     "redis": "^2.1.0"
   },

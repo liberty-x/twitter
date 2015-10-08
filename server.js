@@ -44,6 +44,6 @@ function getData(date){
   var response = client.HGETALL(date)
   console.log(response)
 }
-}
+
 
 module.exports = handler;
