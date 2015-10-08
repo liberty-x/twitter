@@ -11,7 +11,10 @@ document.getElementById('form').addEventListener('submit', function(e){
     if (out.readyState === 4 && out.status === 200){
       console.log(out.responseText)
       if (out.responseText === 'OK')
-       document.getElementById('display').innerHTML = tweet;
+        var node = document.createElement("div");
+        var textnode = document.createTextNode(tweet);
+        node.appendChild(textnode);
+        document.getElementById("results").appendChild(node);
       }
   };
   out.open('POST', '/' + date + '/' + username + '/' + tweet);
