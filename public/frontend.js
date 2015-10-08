@@ -13,9 +13,6 @@ document.getElementById('form').addEventListener('submit', function(e){
       if (out.responseText === 'OK')
        document.getElementById('display').innerHTML = tweet;
       }
-      else {
-        alert("Your tweet is obviously wrong")
-      }
   };
   out.open('POST', '/' + date + '/' + username + '/' + tweet);
   out.send();
