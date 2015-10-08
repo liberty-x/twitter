@@ -1,3 +1,4 @@
+
 body{
   background-color: #24C3BE;;
 }
@@ -13,6 +14,9 @@ img {
   margin-right: auto
 }
 
+p {
+  text-align: center;
+}
 h5 {
   font-family: 'Open Sans', sans-serif;
   font-size: 4em;
@@ -29,19 +33,42 @@ h5 {
 
 input {
   width: 70%;
-  padding: 1em;
   height: 7em;
   opacity: 0.3;
+  margin: 0.6%;
 }
 
 
 input:last-child {
   opacity: 1;
-  width: 60%;
-  font-size: 2em;
+  font-size: 3em;
   font-family: 'Open Sans', sans-serif;
   background-color: #008681;
   text-decoration: none;
-  margin: 5%;
+  font-weight: 700;
   border: 0;
+   border-radius: 0;
+   padding: 0px;
+   box-sizing: initial;
+  height: 2em;
+  margin: 5%;
+  /*appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;*/
+}
+
+@media all and (min-width: 600px) {
+  img {
+    width: 15%;
+    padding: 2%;
+  }
+
+  h2 {
+    font-size: 2.2em;
+    margin-bottom: 1.5%;
+  }
 }
