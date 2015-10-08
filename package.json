@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "./node_modules/.bin/tape ./test/backend.js",
-    "start": "PORT=8000 ./node_modules/.bin/nodemon server.js"
+    "start": "PORT=8000 ./node_modules/.bin/nodemon server.js",
+    "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore ."
   },
   "repository": {
     "type": "git",
