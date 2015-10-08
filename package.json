@@ -6,7 +6,8 @@
   "scripts": {
     "test": "./node_modules/.bin/tape ./test/backend.js",
     "start": "PORT=8000 ./node_modules/.bin/nodemon server.js",
-    "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore ."
+    "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore .",
+    "coverage": "istanbul cover ./node_modules/.bin/tape ./test/*"
   },
   "repository": {
     "type": "git",
@@ -24,8 +25,9 @@
   },
   "pre-commit": [],
   "devDependencies": {
+    "istanbul": "^0.3.22",
+    "nodemon": "^1.7.1",
     "shot": "^1.7.0",
-    "tape": "^4.2.1",
-    "nodemon": "^1.7.1"
+    "tape": "^4.2.1"
   }
 }

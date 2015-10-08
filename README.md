@@ -1,7 +1,7 @@
 # Twitter (or LX Twit)
 
 
-[![Codecrystal](https://img.shields.io/badge/code-crystal-5CB3FF.svg)](http://codecrystal.herokuapp.com/crystalise/liberty-x/twitter/master) [![Build Status](https://travis-ci.org/liberty-x/twitter.svg?branch=master)](https://travis-ci.org/liberty-x/twitter)
+[![Codecrystal](https://img.shields.io/badge/code-crystal-5CB3FF.svg)](http://codecrystal.herokuapp.com/crystalise/liberty-x/twitter/master) [![Build Status](https://travis-ci.org/liberty-x/twitter.svg?branch=master)](https://travis-ci.org/liberty-x/twitter) [![Code Climate](https://codeclimate.com/github/liberty-x/twitter/badges/gpa.svg)](https://codeclimate.com/github/liberty-x/twitter)
 
 Please find our site [here](link to go here). (needs link once on Heroku).
 
