@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "codeclimate": "CODECLIMATE_REPO_TOKEN=a36cfa45c3de9bfd629b48b33daec20b2c9a573d7ecefb9db09ac6afcd9e16db codeclimate-test-reporter < ./coverage/lcov.info",
-    "test": "./node_modules/.bin/tape ./test/backend.js",
+    "test": "./node_modules/.bin/tape ./test/backend.js && npm run coverage",
     "start": "node index.js",
     "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore .",
     "coverage": "istanbul cover ./node_modules/.bin/tape ./test/backend.js"
