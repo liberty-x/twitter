@@ -4,9 +4,11 @@
   "description": "The Best Twitter Knock-off EVER!",
   "main": "server.js",
   "scripts": {
+    "codeclimate": "CODECLIMATE_REPO_TOKEN=a36cfa45c3de9bfd629b48b33daec20b2c9a573d7ecefb9db09ac6afcd9e16db codeclimate-test-reporter < ./coverage/lcov.info",
     "test": "./node_modules/.bin/tape ./test/backend.js",
     "start": "PORT=8000 ./node_modules/.bin/nodemon server.js",
-    "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore ."
+    "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore .",
+    "coverage": "istanbul cover ./node_modules/.bin/tape ./test/backend.js"
   },
   "repository": {
     "type": "git",
@@ -24,8 +26,10 @@
   },
   "pre-commit": [],
   "devDependencies": {
+    "codeclimate-test-reporter": "^0.1.1",
+    "istanbul": "^0.3.22",
+    "nodemon": "^1.7.1",
     "shot": "^1.7.0",
-    "tape": "^4.2.1",
-    "nodemon": "^1.7.1"
+    "tape": "^4.2.1"
   }
 }
