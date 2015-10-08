@@ -23,8 +23,10 @@ function handler(req,res){
     }
     else if (req.url.indexOf('%') > -1) {
       var dataInputs = req.url.split('/');
-      console.log(dataInputs)
-      client.ZADD(dataInputs[1], dataInputs[2], dataInputs[3])
+      var date = dataInputs[1];
+      var username = dataInputs[2];
+      var tweet = dataInputs[3];
+      client.HMSET(date, "username", username, "tweet", tweet);
       res.writeHead(200, {"Content-Type": "text/html"});
       res.end();
     }
