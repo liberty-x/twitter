@@ -50,7 +50,7 @@ input {
 
 input:last-child {
   opacity: 1;
-  font-size: 3em;
+  font-size: 1.7em;
   font-family: 'Open Sans', sans-serif;
   background-color: #008681;
   text-decoration: none;
@@ -115,7 +115,7 @@ font-size: 72px;
 
   input:last-child{
     height: 1.5em;
-    width: 40%;
+    width: 20%;
   }
 
   input[type="text"] {
