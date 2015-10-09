@@ -14,10 +14,19 @@ var serve = (function() {
     console.log(req.method);
     console.log(url);
     if (url === '/') {
-      res.writeHead(200, {
-        "Content-Type": "text/html"
-      });
+      res.writeHead(200, {"Content-Type": "text/html"});
       res.end(index);
+    } else if (url === '/allposts') {
+      var date =  '0920150841240100';
+
+      (function getData() {
+        client.hgetall(date, function (err, obj) {
+          console.log("GETERROR", err, "GETOBJECT", obj)
+          console.dir(obj);
+          res.write(JSON.stringify(obj));
+          res.end();
+        });
+      }());
     } else if (url.indexOf('.') > -1) {
       var ext = url.split('.')[1];
       res.writeHead(200, {
@@ -41,13 +50,6 @@ var serve = (function() {
   function writingToDB(date, username, tweet, callback) {
     client.HMSET(date, ["username", username, "tweet", tweet], callback);
   }
-
-  //
-  // function getData(date) {
-  // //  return date;
-  //   var response = client.HGETALL(date)
-  // //  console.log(response)
-  // }
 
   var create = function (){
     var server = http.createServer(handler);
