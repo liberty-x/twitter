@@ -1,7 +1,7 @@
 # Twitter (or LX Twit)
 
 
-[![Codecrystal](https://img.shields.io/badge/code-crystal-5CB3FF.svg)](http://codecrystal.herokuapp.com/crystalise/liberty-x/twitter/master) [![Build Status](https://travis-ci.org/liberty-x/twitter.svg?branch=master)](https://travis-ci.org/liberty-x/twitter)  [![Code Climate](https://codeclimate.com/github/liberty-x/twitter/badges/gpa.svg)](https://codeclimate.com/github/liberty-x/twitter) [![Test Coverage](https://codeclimate.com/github/liberty-x/twitter/badges/coverage.svg)](https://codeclimate.com/github/liberty-x/twitter/coverage) ![devDependencies](https://david-dm.org/liberty-x/twitter.svg) [![devDependency Status](https://david-dm.org/liberty-x/twitter/dev-status.svg)](https://david-dm.org/liberty-x/twitter#info=devDependencies)
+[![Codecrystal](https://img.shields.io/badge/code-crystal-5CB3FF.svg)](http://codecrystal.herokuapp.com/crystalise/liberty-x/twitter/master) [![Build Status](https://travis-ci.org/liberty-x/twitter.svg?branch=master)](https://travis-ci.org/liberty-x/twitter)  [![Code Climate](https://codeclimate.com/github/liberty-x/twitter/badges/gpa.svg)](https://codeclimate.com/github/liberty-x/twitter) [![Test Coverage](https://codeclimate.com/github/liberty-x/twitter/badges/coverage.svg)](https://codeclimate.com/github/liberty-x/twitter/coverage) [![bitHound Score](https://www.bithound.io/github/liberty-x/twitter/badges/score.svg)](https://www.bithound.io/github/liberty-x/twitter) ![devDependencies](https://david-dm.org/liberty-x/twitter.svg) [![devDependency Status](https://david-dm.org/liberty-x/twitter/dev-status.svg)](https://david-dm.org/liberty-x/twitter#info=devDependencies) 
 
 [![forthebadge](http://forthebadge.com/images/badges/uses-html.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/built-with-swag.svg)](http://forthebadge.com)
 
@@ -40,7 +40,7 @@ Users input their username and tweet in a form box that will then appear below. 
 * Tape (backend testing)
 * Shot (backend testing)
 * Istanbul
-* Codeclimate 
+* Codeclimate
 
 ### Testing
 
