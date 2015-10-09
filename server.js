@@ -17,21 +17,39 @@ var serve = (function() {
       res.writeHead(200, {"Content-Type": "text/html"});
       res.end(index);
     } else if (url === '/allposts') {
-      var date =  '0920150841240100';
-
       (function getData() {
-        client.hgetall(date, function (err, obj) {
-          console.log("GETERROR", err, "GETOBJECT", obj)
-          console.dir(obj);
-          res.write(JSON.stringify(obj));
-          res.end();
+        client.GET("tweetcount", function(err,reply){
+          console.log("countERROR", err, "countOBJECT", reply)
+          var endLength = reply;
+          var startLength = reply - 5;
+          client.LRANGE("dates", startLength, endLength, function(err,reply){
+            console.log("datesERROR", err, "datesOBJECT", reply)
+            var dates = reply;
+            client.multi()
+              .hgetall(dates[4])
+              .hgetall(dates[3])
+              .hgetall(dates[2])
+              .hgetall(dates[1])
+              .hgetall(dates[0])
+
+              .exec(function(err,replies){
+                console.log(replies);
+                res.write(JSON.stringify(replies));
+                res.end();
+              })
+
+            // client.hgetall(date, function (err, obj) {
+            //   console.log("GETERROR", err, "GETOBJECT", obj)
+            //   console.dir(obj);
+            //   res.write(JSON.stringify(obj));
+            //   res.end();
+            // });
+          });
         });
       }());
     } else if (url.indexOf('.') > -1) {
       var ext = url.split('.')[1];
-      res.writeHead(200, {
-        "Content-Type": "text/" + ext
-      });
+      res.writeHead(200, {"Content-Type": "text/" + ext});
       res.end(fs.readFileSync(__dirname + url));
     } else if (req.method === 'POST') {
       var dataInputs = url.split('/');
@@ -48,7 +66,10 @@ var serve = (function() {
   }
 
   function writingToDB(date, username, tweet, callback) {
-    client.HMSET(date, ["username", username, "tweet", tweet], callback);
+    client.incr('tweetcount', function(err, tweetCount){
+      client.HMSET(date, ["username", username, "tweet", tweet], callback);
+      client.RPUSH("dates", date);
+    });
   }
 
   var create = function (){
