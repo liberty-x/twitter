@@ -28,6 +28,11 @@ var serve = (function() {
             client.multi()
 
               .hgetall(dates[0])
+              .hgetall(dates[1])
+              .hgetall(dates[2])
+              .hgetall(dates[3])
+              .hgetall(dates[4])
+              .hgetall(dates[5])
 
               .exec(function(err,replies){
                 console.log(replies);
