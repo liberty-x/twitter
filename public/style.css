@@ -1,9 +1,81 @@
-h5{
-  color: blue;
-  background-color: yellow;
+
+body{
+  background-color: #24C3BE;;
+}
+
+
+
+
+img {
+  padding: 5%;
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+p {
+  text-align: center;
+}
+h5 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 4em;
+  text-align: center;
+  font-style: italic;
+  font-weight: 100;
+  margin-top: 0;
+  margin-bottom: 5%;
+}
+
+.content > * {
   text-align: center;
 }
 
-body{
-  background-color: teal;
+input {
+  width: 70%;
+  height: 7em;
+  opacity: 0.3;
+  margin: 0.6%;
+}
+
+
+input:last-child {
+  opacity: 1;
+  font-size: 3em;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #008681;
+  text-decoration: none;
+  font-weight: 700;
+  border: 0;
+   border-radius: 0;
+   padding: 0px;
+   box-sizing: initial;
+  height: 2em;
+  margin: 5%;
+  /*appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;*/
+}
+
+@media all and (min-width: 460px) {
+  img {
+    width: 15%;
+    padding: 2%;
+  }
+
+  h2 {
+    font-size: 2.2em;
+    margin-bottom: 1%;
+  }
+
+  input:last-child{
+    height: 1.5em;
+    width: 40%;
+  }
+
+
 }
