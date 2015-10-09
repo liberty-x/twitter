@@ -19,31 +19,21 @@ var serve = (function() {
     } else if (url === '/allposts') {
       (function getData() {
         client.GET("tweetcount", function(err,reply){
-          console.log("countERROR", err, "countOBJECT", reply)
+          console.log("countERROR", err, "countOBJECT", reply);
           var endLength = reply;
           var startLength = reply - 5;
           client.LRANGE("dates", startLength, endLength, function(err,reply){
-            console.log("datesERROR", err, "datesOBJECT", reply)
+            console.log("datesERROR", err, "datesOBJECT", reply);
             var dates = reply;
             client.multi()
-              .hgetall(dates[4])
-              .hgetall(dates[3])
-              .hgetall(dates[2])
-              .hgetall(dates[1])
+
               .hgetall(dates[0])
 
               .exec(function(err,replies){
                 console.log(replies);
                 res.write(JSON.stringify(replies));
                 res.end();
-              })
-
-            // client.hgetall(date, function (err, obj) {
-            //   console.log("GETERROR", err, "GETOBJECT", obj)
-            //   console.dir(obj);
-            //   res.write(JSON.stringify(obj));
-            //   res.end();
-            // });
+              });
           });
         });
       }());
@@ -75,7 +65,7 @@ var serve = (function() {
   var create = function (){
     var server = http.createServer(handler);
     server.listen(port);
-  }
+  };
 
   return {
     handler: handler,
@@ -83,7 +73,7 @@ var serve = (function() {
     client: client,
     writingToDB: writingToDB
     //getData: getData
-  }
+  };
 }());
 
 module.exports = serve;

@@ -31,7 +31,7 @@ document.getElementById('form').addEventListener('submit', function(e){
     if (out.readyState === 4 && out.status === 200) {
       console.log(out.responseText);
       var replies = JSON.parse(out.responseText);
-      replies.map(postReplies)
+      replies.map(postReplies);
       console.log(replies[0]);
     }
   };
@@ -41,9 +41,11 @@ document.getElementById('form').addEventListener('submit', function(e){
 
 function postReplies(reply){
   var node = document.createElement("div");
-  var node2 = document.createElement("div")
-  var textnode = document.createTextNode(reply.tweet);
-  var textnode2 = document.createTextNode(reply.username);
+  var node2 = document.createElement("div");
+  var tweet = reply.tweet.replace(/%20/, " ");
+  var username = reply.username.replace(/%20/, " ");
+  var textnode = document.createTextNode(tweet);
+  var textnode2 = document.createTextNode(username);
   node.appendChild(textnode);
   node2.appendChild(textnode2);
   document.getElementById("database").appendChild(node2)
