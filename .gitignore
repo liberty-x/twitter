@@ -4,4 +4,3 @@ dump.rdb
 npm-debug.log
 .jshintrc
 coverage
-config.env
