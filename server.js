@@ -14,10 +14,17 @@ var serve = (function() {
     console.log(req.method);
     console.log(url);
     if (url === '/') {
-      res.writeHead(200, {
-        "Content-Type": "text/html"
-      });
-      res.end(index);
+      var date =  '0920150841240100';
+
+      (function getData() {
+        client.hgetall(date, function (err, obj) {
+          console.log("GETERROR", err, "GETOBJECT", obj)
+          console.dir(obj);
+          res.writeHead(200, {"Content-Type": "text/html"});
+          res.write(index);
+          res.end(JSON.stringify(obj));
+        });
+      }());
     } else if (url.indexOf('.') > -1) {
       var ext = url.split('.')[1];
       res.writeHead(200, {
@@ -42,12 +49,15 @@ var serve = (function() {
     client.HMSET(date, ["username", username, "tweet", tweet], callback);
   }
 
-  //
-  // function getData(date) {
+
+
+
+
+
+    //var resonse = client.hgetall(date)
   // //  return date;
   //   var response = client.HGETALL(date)
   // //  console.log(response)
-  // }
 
   var create = function (){
     var server = http.createServer(handler);

@@ -9,7 +9,7 @@ document.getElementById('form').addEventListener('submit', function(e){
   var out = new XMLHttpRequest();
   out.onreadystatechange = function(){
     if (out.readyState === 4 && out.status === 200){
-      console.log(out.responseText)
+      //console.log(out.responseText)
       if (out.responseText === 'OK')
        document.getElementById('display').innerHTML = tweet;
       }
@@ -17,3 +17,14 @@ document.getElementById('form').addEventListener('submit', function(e){
   out.open('POST', '/' + date + '/' + username + '/' + tweet);
   out.send();
 });
+
+
+var out = new XMLHttpRequest();
+out.onreadystatechange = function(){
+  if (out.readyState === 4 && out.status === 200){
+    console.log(out.responseText)
+     document.getElementById('display').innerHTML = out.responseText;
+    }
+};
+out.open('GET', '/');
+out.send();
