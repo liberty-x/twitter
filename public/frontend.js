@@ -12,8 +12,12 @@ document.getElementById('form').addEventListener('submit', function(e){
       //console.log(out.responseText)
       if (out.responseText === 'OK')
         var node = document.createElement("div");
+        var node2 = document.createElement("div")
         var textnode = document.createTextNode(tweet);
+        var textnode2 = document.createTextNode(username);
         node.appendChild(textnode);
+        node2.appendChild(textnode2);
+        document.getElementById("results").appendChild(node2)
         document.getElementById("results").appendChild(node);
       }
   };
@@ -21,13 +25,14 @@ document.getElementById('form').addEventListener('submit', function(e){
   out.send();
 });
 
-
-var out = new XMLHttpRequest();
-out.onreadystatechange = function(){
-  if (out.readyState === 4 && out.status === 200){
-    console.log(out.responseText)
-     document.getElementById('display').innerHTML = out.responseText;
+(function pageLoad () {
+  var out = new XMLHttpRequest();
+  out.onreadystatechange = function() {
+    if (out.readyState === 4 && out.status === 200) {
+      console.log(out.responseText);
+      document.getElementById('database').innerHTML = out.responseText;
     }
-};
-out.open('GET', '/');
-out.send();
+  };
+  out.open('GET', '/allposts');
+  out.send();
+}());
