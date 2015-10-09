@@ -29,10 +29,10 @@ document.getElementById('form').addEventListener('submit', function(e){
   var out = new XMLHttpRequest();
   out.onreadystatechange = function() {
     if (out.readyState === 4 && out.status === 200) {
-      console.log(out.responseText);
-      var replies = JSON.parse(out.responseText);
+      console.log("response text", out.responseText);
+      var replies = JSON.parse(out.responseText).slice(1);
       replies.map(postReplies);
-      console.log(replies[0]);
+      console.log("replies", replies[0]);
     }
   };
   out.open('GET', '/allposts');
@@ -42,8 +42,9 @@ document.getElementById('form').addEventListener('submit', function(e){
 function postReplies(reply){
   var node = document.createElement("div");
   var node2 = document.createElement("div");
-  var tweet = reply.tweet.replace(/%20/, " ");
-  var username = reply.username.replace(/%20/, " ");
+  var tweet = reply.tweet.replace(/%20/g, " ");
+  var username = reply.username.replace(/%20/g, " ");
+  console.log(tweet, username);
   var textnode = document.createTextNode(tweet);
   var textnode2 = document.createTextNode(username);
   node.appendChild(textnode);
